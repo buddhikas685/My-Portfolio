@@ -1,0 +1,720 @@
+/* ===== GOOGLE FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #0d1117;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ===== BACKGROUND GLOW ===== */
+
+body::before{
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #00ff88;
+    filter: blur(180px);
+    top: -120px;
+    right: -100px;
+    opacity: 0.35;
+    z-index: -1;
+}
+
+body::after{
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: #00ff88;
+    filter: blur(180px);
+    bottom: -120px;
+    left: -100px;
+    opacity: 0.25;
+    z-index: -1;
+}
+
+/* ===== NAVBAR ===== */
+
+nav{
+    width: 100%;
+    padding: 25px 90px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(10,10,10,0.45);
+    backdrop-filter: blur(10px);
+}
+
+nav h1{
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 18px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+
+    padding: 10px 22px;
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(10px);
+
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(255,255,255,0.05); /* same background keep */
+    color: #00ff88; /* only text green */
+
+    transform: scale(1.1);
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 120px 90px 50px;
+}
+
+/* LEFT */
+
+.hero-text{
+    max-width: 550px;
+}
+
+.intro{
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #f1f1f1;
+}
+
+.name{
+    font-size: 55px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+
+    color: white;
+}
+
+#typing{
+    font-size: 22px;
+    color: #00ff88;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/* SOCIAL ICONS */
+
+.social-icons{
+    display: flex;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.social-icons a{
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid #00ff88;
+
+    color: #00ff88;
+    font-size: 18px;
+
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover{
+    background: #00ff88;
+    color: black;
+
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* BUTTON */
+
+.btn{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.btn{
+    display: inline-block;
+
+    padding: 14px 35px;
+    border-radius: 40px;
+
+    background: #00ff88;
+    color: black;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: 0.3s;
+    box-shadow: 0 0 25px rgba(17, 17, 17, 0.5);
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
+/* RIGHT IMAGE */
+
+.hero-image{
+    position: relative;
+}
+
+.hero-image::before{
+    content: "";
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    background: #00ff88;
+    filter: blur(80px);
+
+    opacity: 0.45;
+
+    z-index: -1;
+    top: 20px;
+    left: 20px;
+}
+
+.hero-image img{
+    width: 340px;
+    height: 420px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    border: 3px solid rgba(0,229,255,0.5);
+
+    box-shadow: 0 0 30px rgba(0,229,255,0.3);
+}
+
+/* ===== OTHER SECTIONS ===== */
+
+section{
+    padding: 90px;
+}
+
+section h2{
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+/* ABOUT */
+
+.about {
+    padding: 80px 10%;
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Section එක සම්පූර්ණයෙන්ම මැදට ගන්න */
+}
+
+/* 🟢 ප්‍රධාන පිටත FULL BOX එක (Center එක නිවැරදි කර ඇත) */
+.about-box {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto; /* මේකෙන් තමයි Box එක හරියටම මැදට (Center) ගන්නේ */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 40px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+
+/* ලොකු Box එක Hover කරද්දී ලොකු එකේ බෝඩර් එක විතරක් Green වේ */
+.about-box:hover {
+    transform: translateY(-5px);
+    border-color: #00ff88;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.05);
+}
+
+.about-box h2 {
+    font-size: 34px;
+    margin-bottom: 25px;
+    color: white;
+}
+
+/* පළමු Paragraph එකේ Style එක */
+.about-main-text {
+    line-height: 1.8;
+    color: #cbd5e1;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.about-box b {
+    color: #00ff88;
+    font-weight: 600;
+}
+
+/* --- ඇතුළත Academic Box එක --- */
+.academic-container {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 30px 25px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+/* මවුස් එක මේ කුඩා Box එක උඩටම ගියවිට විතරක් මේක Green වේ */
+.academic-container:hover {
+    border-color: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+    background: rgba(0, 255, 136, 0.02);
+}
+
+/* Circle Logo Styling */
+.about-campus-circle {
+    width: 75px;
+    height: 75px;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.about-campus-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* කුඩා Box එක Hover කරද්දී විතරක් රවුම් ලෝගෝ එකේ බෝඩර් එකත් Green වේ */
+.academic-container:hover .about-campus-circle {
+    border-color: #00ff88;
+}
+
+/* දෙවැනි Paragraph එකේ Style එක */
+.academic-text {
+    line-height: 1.8;
+    color: #cbd5e1;
+    font-size: 15.5px;
+    margin: 0;
+}
+
+/* SKILLS */
+
+ආ, නියමයි! ඒ කියන්නේ ඔයාට ඕනේ Skills Section එකත් අර About Box එක වගේම ලස්සන ලොකු ප්‍රධාන පෙට්ටියකට (Main Box) දාලා, ඒ මුළු පෙට්ටිය උඩට මවුස් එක ගෙනිච්චාම වටේටම Green Border Effect එක ලැබෙන විදිහට හදාගන්න.
+
+මෙන්න About Box එකේ Style එකටම ගැලපෙන්න Skills Section එක Upgrade කරපු සම්පූර්ණ HTML සහ CSS කේතය:
+
+1. Updated HTML
+HTML
+<section class="skills reveal" id="skills">
+    <div class="skills-box">
+        <h2>My Skills</h2>
+
+        <div class="skill-boxes">
+            <div class="box">HTML</div>
+            <div class="box">CSS</div>
+            <div class="box">JavaScript</div>
+            
+            <div class="box">PHP</div>
+            <div class="box">Python</div>
+            <div class="box">Flask</div>
+            
+            <div class="box">SQL</div>
+            <div class="box">WordPress</div>
+            <div class="box">Drupal</div>
+        </div>
+    </div>
+</section>
+2. Updated CSS (About Box එකේ Style එකටම ගැලපෙන පරිදි)
+මෙහිදී .skills-box එකටත් About Box එකේ තිබ්බ background, border-radius, backdrop-filter සහ Hover වෙද්දී Green බෝඩර් එකක් එන Effect එකම ලස්සනට එකතු කරලා තියෙනවා:
+
+CSS
+.skills {
+    padding: 80px 10%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* 🟢 About Box එකේ Style එකටම හැදූ ප්‍රධාන පිටත Box එක */
+.skills-box {
+    width: 100%;
+    max-width: 750px; /* About Box එකේ Size එකමයි */
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 40px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+
+/* 🟢 මුළු Skills Box එකම Hover කරද්දී බෝඩර් එක Green වන කේතය */
+.skills-box:hover {
+    transform: translateY(-5px);
+    border-color: #00ff88;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.05); /* සියුම් Green Glow එක */
+}
+
+.skills-box h2 {
+    font-size: 34px;
+    margin-bottom: 35px; /* Heading එක සහ කොටු අතර පරතරය */
+    color: white;
+}
+
+/* ඇතුළත තියෙන Grid එක */
+.skill-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* පේළියට 3 බැගින් */
+    gap: 20px;
+    width: 100%;
+}
+
+/* ඇතුළත තියෙන කුඩා Skills කොටු (දැන් මේවයේ බෝඩර් එක hover එකේදී විතරක් මාරු වේ) */
+.box {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 0;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03); /* ලාවට පෙනෙන පසුබිමක් */
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+    cursor: pointer;
+    color: #cbd5e1;
+}
+
+/* 🟢 කුඩා කොටුවක් උඩටම මවුස් එක ගියාම ඒ කොටුව විතරක් වෙනම Green වේ */
+.box:hover {
+    transform: translateY(-4px);
+    border-color: #00ff88;
+    color: #00ff88;
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.1);
+}
+
+/* Responsive UI (Mobile Phone වලදී පේළියට 2 බැගින් මාරු වීමට) */
+@media (max-width: 650px) {
+    .skill-boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .skills-box {
+        padding: 30px 20px;
+    }
+}
+
+/* PROJECTS */
+
+.projects {
+    padding: 80px 10%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* 🟢 About/Skills වලට සමාන ප්‍රධාන පිටත Box එක */
+.projects-box {
+    width: 100%;
+    max-width: 750px; /* අනිත් Boxes වල Size එකමයි */
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 40px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+
+/* 🟢 මුළු Projects Box එකම Hover කරද්දී ප්‍රධාන බෝඩර් එක Green වන කේතය */
+.projects-box:hover {
+    transform: translateY(-5px);
+    border-color: #00ff88;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.05);
+}
+
+.projects-box h2 {
+    font-size: 34px;
+    margin-bottom: 35px;
+    color: white;
+}
+
+/* Cards එක දිගට පහළට පෙළගස්වන Container එක */
+.project-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+}
+
+/* 🟢 individual PROJECT CARD */
+.project-card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex; /* Image එකයි Text එකයි පැත්තෙන් පැත්තට තියන්න */
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+/* 🟢 අදාළ Project Card එක උඩට විතරක් මවුස් එක ගියාම ඒක වෙනම Green වන කේතය */
+.project-card:hover {
+    border-color: #00ff88;
+    background: rgba(0, 255, 136, 0.01);
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.08);
+}
+
+/* Image එක වටේට ඇති Wrapper එක */
+.project-img-wrapper {
+    width: 120px;
+    height: 80px;
+    min-width: 120px; /* Size එක වෙනස් වීම වැළැක්වීමට */
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* පින්තූරය ලස්සනට සකස් කිරීම */
+.project-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* පින්තූරය ඇද නොවී Box එක පුරා පිරීමට */
+    transition: 0.3s ease;
+}
+
+/* Card එක hover කරද්දී පينතූරය ලාවට Zoom වීමේ Effect එක */
+.project-card:hover .project-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.project-info h3 {
+    color: white;
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Card එක hover වෙද්දී Heading එක කොළ පාට වීමට */
+.project-card:hover .project-info h3 {
+    color: #00ff88;
+}
+
+.project-info p {
+    color: #cbd5e1;
+    line-height: 1.6;
+    font-size: 14.5px;
+    margin: 0;
+}
+
+/* Responsive UI (Mobile Phone වලදී Image එක Text එකට උඩින් පිහිටීමට) */
+@media (max-width: 600px) {
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 15px;
+    }
+    .project-card text-align {
+        text-align: center;
+    }
+    .project-img-wrapper {
+        width: 100%;
+        height: 140px;
+    }
+}
+/* CONTACT */
+
+form{
+    max-width: 600px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+form input,
+form textarea{
+    padding: 16px;
+
+    border-radius: 10px;
+    border: none;
+
+    background: rgba(255,255,255,0.05);
+    color: white;
+
+    outline: none;
+}
+
+form textarea{
+    height: 150px;
+}
+
+form button{
+    padding: 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #00ff88;
+    color: black;
+
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align: center;
+    padding: 30px;
+    color: #cbd5e1;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 50px;
+}
+
+.footer a{
+    color: #00ff88;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer a:hover{
+    text-decoration: underline;
+}
+
+.contact{
+    margin: 5px 0;
+}
+
+/* SCROLL ANIMATION */
+
+.reveal{
+    opacity: 0;
+    transform: translateY(80px);
+    transition: 1s;
+}
+
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width: 992px){
+
+    .hero{
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .hero-text{
+        max-width: 100%;
+    }
+
+    .socials{
+        justify-content: center;
+    }
+
+    .name{
+        font-size: 50px;
+    }
+}
+
+@media(max-width: 768px){
+
+    nav{
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    nav ul{
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    section{
+        padding: 70px 25px;
+    }
+
+    .hero{
+        padding: 160px 25px 50px;
+    }
+
+    .hero-image img{
+        width: 280px;
+        height: 350px;
+    }
+
+    .name{
+        font-size: 40px;
+    }
+
+    .intro{
+        font-size: 22px;
+    }
+}

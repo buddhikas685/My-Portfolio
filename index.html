@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+<nav>
+    <h1>Portfolio</h1>
+
+    <ul>
+        <li><a href="#home" class="nav-link"><span>Home</span></a></li>
+        <li><a href="#about" class="nav-link"><span>About</span></a></li>
+        <li><a href="#skills" class="nav-link"><span>Skills</span></a></li>
+        <li><a href="#projects" class="nav-link"><span>Projects</span></a></li>
+        <li><a href="#contact" class="nav-link"><span>Contact</span></a></li>
+    </ul>
+</nav>
+    
+    <!-- HERO -->
+<section class="hero reveal" id="home">
+
+    <div class="hero-text">
+
+        <h2 class="intro">Hello, It's Me</h2>
+
+        <h1 class="name">Buddhika Sampath</h1>
+
+        <p id="typing"></p>
+
+        <!-- SOCIAL ICONS -->
+      <div class="social-icons">
+
+        <a href="https://github.com/buddhikas685" target="_blank">
+         <i class="fab fa-github"></i>
+         </a>
+
+        <a href="https://www.linkedin.com/in/buddhika-sampath-46b6133b5/" target="_blank">
+         <i class="fab fa-linkedin"></i>
+         </a>
+
+        <a href="https://web.facebook.com/profile.php?id=100074724977009" target="_blank">
+         <i class="fab fa-facebook"></i>
+         </a>
+
+        <a href="https://wa.me/94778126798" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+         </a>
+
+      </div>
+
+        <a href="cv.pdf" download class="btn">Download CV</a>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="Buddhikas.jpg" alt="Buddhika">
+
+    </div>
+
+</section>
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="about-box">
+        <h2>About Me</h2>
+        
+        <p class="about-main-text">
+            I’m <b>Buddhika Sampath</b>, a passionate web developer who loves creating clean, modern, and responsive websites. I enjoy turning ideas into real digital experiences using HTML, CSS, and JavaScript. I focus on writing simple, efficient code and designing user-friendly interfaces that look good on all devices. I’m continuously learning new technologies to improve my skills and build better, more interactive web projects.
+        </p>
+        
+        <div class="academic-container">
+            <div class="about-campus-circle">
+                <img src="download.png" alt="CINEC Campus Logo">
+            </div>
+
+            <p class="academic-text">
+                Currently, I am pursuing my higher education as a <b>BSc (Hons) Software Engineering undergraduate</b> at <b>CINEC Campus</b>. Through this academic journey, I am gaining hands-on experience in software development life cycles, modern programming paradigms, and industry-standard practices to shape my career as a professional software engineer.
+            </p>
+        </div>
+        
+    </div>
+</section>
+
+    <!-- SKILLS -->
+    <section class="skills reveal" id="skills">
+    <div class="skills-box">
+        <h2>My Skills</h2>
+
+        <div class="skill-boxes">
+            <div class="box">HTML</div>
+            <div class="box">CSS</div>
+            <div class="box">JavaScript</div>
+            
+            <div class="box">PHP</div>
+            <div class="box">Python</div>
+            <div class="box">Flask</div>
+            
+            <div class="box">SQL</div>
+            <div class="box">WordPress</div>
+            <div class="box">Drupal</div>
+        </div>
+    </div>
+</section>
+
+<section class="projects reveal" id="projects">
+    
+    <div class="projects-box">
+        <h2>Projects</h2>
+
+        <div class="project-container">
+
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="images.jpg" alt="Food Ordering System">
+                </div>
+                <div class="project-info">
+                    <h3>Food Ordering System</h3>
+                    <p>Modern food ordering web application with responsive UI.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="smartparking.jpeg" alt="Car Parking System">
+                </div>
+                <div class="project-info">
+                    <h3>Car Parking System</h3>
+                    <p>Smart parking management system for vehicle tracking.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="download.jpg" alt="Library Management System">
+                </div>
+                <div class="project-info">
+                    <h3>Library Management System</h3> <p>Full CRUD application for managing books efficiently.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <!-- CONTACT -->
+    <section class="contact reveal" id="contact">
+
+        <h2>Contact Me</h2>
+
+        <form id="contactForm">
+
+            <input type="text" id="name" placeholder="Your Name">
+
+            <input type="email" id="email" placeholder="Your Email">
+
+            <textarea id="message" placeholder="Your Message"></textarea>
+
+            <button type="submit">Send</button>
+
+        </form>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+    <p>© 2026 Buddhika Sampath | All Rights Reserved</p>
+
+    <p class="contact">
+         <a href="mailto:buddhikas685@gmail.com">buddhikas685@gmail.com</a>
+    </p>
+
+    <p class="contact">
+         <a href="tel:+94778126798">+94 77 812 6798</a>
+    </p>
+
+</footer>
+
+    <script src="script.js"></script>
+
+<script>
+const links = document.querySelectorAll(".nav-link");
+
+links.forEach(link => {
+    link.addEventListener("click", function () {
+
+        links.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
+
+    });
+});
+</script>
+
+</body>
+</html>
