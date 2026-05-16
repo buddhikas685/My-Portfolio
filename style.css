@@ -1,51 +1,51 @@
-/* ===== GOOGLE FONT ===== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    /* ===== GOOGLE FONT ===== */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
 
-body{
-    font-family: 'Poppins', sans-serif;
-    background: #0d1117;
-    color: white;
-    overflow-x: hidden;
-}
+    body{
+        font-family: 'Poppins', sans-serif;
+        background: #0d1117;
+        color: white;
+        overflow-x: hidden;
+    }
 
-/* ===== BACKGROUND GLOW ===== */
+    /* ===== BACKGROUND GLOW ===== */
 
-body::before{
-    content: "";
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    background: #00ff88;
-    filter: blur(180px);
-    top: -120px;
-    right: -100px;
-    opacity: 0.35;
-    z-index: -1;
-}
+    body::before{
+        content: "";
+        position: fixed;
+        width: 500px;
+        height: 500px;
+        background: #00ff88;
+        filter: blur(180px);
+        top: -120px;
+        right: -100px;
+        opacity: 0.35;
+        z-index: -1;
+    }
 
-body::after{
-    content: "";
-    position: fixed;
-    width: 400px;
-    height: 400px;
-    background: #00ff88;
-    filter: blur(180px);
-    bottom: -120px;
-    left: -100px;
-    opacity: 0.25;
-    z-index: -1;
-}
+    body::after{
+        content: "";
+        position: fixed;
+        width: 400px;
+        height: 400px;
+        background: #00ff88;
+        filter: blur(180px);
+        bottom: -120px;
+        left: -100px;
+        opacity: 0.25;
+        z-index: -1;
+    }
 
-/* ===== NAVBAR ===== */
+    /* ===== NAVBAR ===== */
 
-nav{
+    nav{
     width: 100%;
     padding: 25px 90px;
 
@@ -70,7 +70,7 @@ nav h1{
 nav ul{
     display: flex;
     list-style: none;
-    gap: 18px;
+    gap: 10px;
 }
 
 nav ul li a {
@@ -90,11 +90,16 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: rgba(255,255,255,0.05); /* same background keep */
-    color: #00ff88; /* only text green */
-
+    background: rgba(255,255,255,0.05);
+    color: #00ff88;
     transform: scale(1.1);
 }
+
+/* 🔴 Desktop එකේදී Hamburger එක සම්පූර්ණයෙන්ම නොපෙනී යාමට (display: none) */
+.hamburger {
+    display: none;
+}
+
 
 /* ===== HERO ===== */
 
@@ -685,36 +690,130 @@ form button{
 
 @media(max-width: 768px){
 
-    nav{
+    /* ... උඩින් තියෙන nav{} කොටස එහෙම්මම තිබෙන්න හරින්න ... */
+
+    /* ☰ Hamburger Container එක */
+    .hamburger {
+        display: flex;
         flex-direction: column;
-        gap: 20px;
-        padding: 20px;
+        cursor: pointer;
+        gap: 5px;
+        z-index: 1005; /* මෙනු එකට වඩා හැමවෙලේම උඩින් තියන්න */
     }
 
-    nav ul{
-        gap: 18px;
-        flex-wrap: wrap;
+    /* 🟢 ඉරි තුනේ තනි තනි ඉරක් (Transition එක අනිවාර්යයි ඇනිමේෂන් එක smooth වෙන්න) */
+    .hamburger .bar {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: white;
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth animation effect */
+    }
+nav ul {
+        position: absolute;
+        top: 85px; /* Navbar එකට ලස්සනට පොඩ්ඩක් යටින් පටන් ගන්න */
+        right: -100%; /* මුලින් දකුණු පැත්තේ හැංගිලා තියෙන්නේ */
+        width: 220px; /* Full-screen වෙන්නේ නැති වෙන්න width එක සීමා කළා */
+        height: auto; /* Content එකේ හැටියට උස auto හැදෙනවා */
+        
+        /* 🟢 Glassmorphism & Blur Effect (පසුබිම ලස්සනට බ්ලර් වෙන්න) */
+        background: rgba(20, 25, 35, 0.65); 
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        
+        display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        gap: 10px;
+        
+        /* Box එකේ හැඩය සහ Border එක */
+        border-radius: 20px;
+        border: 1px solid rgba(0, 255, 136, 0.15); /* ලාවට පෙනෙන Green Border එකක් */
+        padding: 25px 15px;
+        
+        /* සියුම් Green Shadow/Glow එකක් */
+        box-shadow: 0 15px 35px rgba(0, 255, 136, 0.08), 0 0 15px rgba(0,0,0,0.5);
+        
+        /* Box එක පාවෙලා එන ඇනිමේෂන් එක */
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        opacity: 0; /* මුලින් නොපෙනී තිබේ */
     }
 
-    section{
-        padding: 70px 25px;
+    /* 🟢 ඉරි තුන ක්ලික් කරලා 'active' වුණාම දකුණු පැත්තේ ඉඳන් ලස්සනට පාවෙලා එනවා */
+    nav ul.active {
+        right: 25px; /* දකුණු පැත්තේ බෝඩර් එකට ගාණට සෙට් වෙනවා */
+        opacity: 1;
     }
 
-    .hero{
-        padding: 160px 25px 50px;
+    /* 📱 මෙනු එක ඇතුළේ තියෙන ලින්ක්ස් */
+    nav ul li {
+        width: 100%;
+        text-align: center;
     }
 
-    .hero-image img{
-        width: 280px;
-        height: 350px;
+    nav ul li a {
+        font-size: 16px;
+        color: white;
+        padding: 10px 0;
+        width: 100%;
+        display: block;
+        border-radius: 12px;
+        text-decoration: none;
+        background: transparent !important; /* පරණ background reset කළා */
+        border: none !important;
+        backdrop-filter: none !important;
+        transition: 0.3s ease;
     }
 
-    .name{
-        font-size: 40px;
+    /* 🟢 🔴 GREEN HOVER EFFECT: ක්ලික් කරද්දී හෝ Hover වෙද්දී කොළ පාට වීමේ ඇනිමේෂන් එක */
+   nav ul li a:hover,
+    nav ul li a:active,
+    nav ul li a:focus {
+        color: #00ff88 !important;
+        background: rgba(0, 255, 136, 0.12) !important; /* ලාවට කොළ පාට පසුබිමක් */
+        transform: scale(1.05);
     }
 
-    .intro{
-        font-size: 22px;
+    /* ... යටින් තියෙන Animation (☰ -> X) සහ .hero කේතයන් එහෙම්මම තිබෙන්න හරින්න ... */
+}
+
+    /* =========================================================
+       🔴 HAMBURGER ANIMATION EFFECT (☰ -> X)
+       ========================================================= */
+    
+    /* ක්ලික් කළ විට මැද ඉර අතුරුදහන් වීම */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    /* ක්ලික් කළ විට උඩ ඉර 45°ක් කරකැවීම */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: #00ff88; /* X අකුර වෙද්දී කොළ පාට වෙනවා */
+    }
+
+    /* ක්ලික් කළ විට යට ඉර -45°ක් කරකැවීම */
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: #00ff88;
+    }
+
+    /* ... යටින් තියෙන .hero{} සහ අනෙකුත් කොටස් එහෙම්මම තිබෙන්න හරින්න ... */
+}
+
+    /* Hero Padding එක */
+    .hero {
+        padding: 200px 25px 50px;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-image img {
+        width: 260px;
+        height: 320px;
     }
 }
