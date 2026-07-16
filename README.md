@@ -16,4 +16,4 @@ This is my personal portfolio website built using HTML, CSS, and JavaScript.
 I am an undergraduate student at CINEC Campus, pursuing a BSc (Hons) in Software Engineering.
 
 ## 🌍 Live Demo
-https://buddhikas685.github.io/your-repo-name/
+https://buddhikas685.github.io/My-Portfolio/
